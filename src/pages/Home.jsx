@@ -1,4 +1,4 @@
-import "./Pages.css"
+// import "./Pages.css"
 import { auth } from "../firebaseConfig";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useState, useEffect } from "react";

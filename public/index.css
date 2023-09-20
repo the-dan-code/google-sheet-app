@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200");
+
+:root {
+    --primary: green;
+    --error: red;
+}
+
+body {
+    background: beige;
+    margin: 0;
+    font-family: 'poppins';
+}
+
+header {
+    background: seagreen;
+}
+
+header .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a {
+    color:beige;
+    text-decoration: none;
+}
+
+.page-body {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 100px;
+}
+
+.user-details {
+    background: blanchedalmond;
+    border-radius: 40px;
+    margin: 20px 0px;
+    padding: 20px;
+    position: relative;
+    box-shadow: 2px 2px 5px rgb(0,0,0,0.05);
+}
+
+.user-details h4 {
+    margin: 0 0 10px 0;
+    font-size: 1.2 em;
+    color: var(--primary)
+}
+
+.user-details p {
+    margin: 0;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.user-details span {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    background: #f1f1f1;
+    padding: 6px;
+    border-radius: 50%;
+    color: #333;
+}
+
+/* App User Detail Form*/
+
+label, input {
+    display: block;
+}
+
+input {
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form button {
+    background: var(--primary);
+    border: 0;
+    color: #fff;
+    padding: 10px;
+    font-family: "poppins";
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+div.error {
+    padding: 10px;
+    background: #ffefef;
+    border: 1px solid;
+    color: var(--error);
+    border-radius: 4px;
+    margin: 20px 0;
+}
+
+input.error {
+    border: 1px solid var(--error);
+}

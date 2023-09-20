@@ -27,6 +27,26 @@ const getSingleAppUserData = async (req, res) => {
 
 const createAppUserData = async (req, res) => {
     const { email, name, role, sheet_url } = req.body
+
+    let emptyFields = []
+
+    if (!email) {
+        emptyFields.push('email')
+    }
+    if (!name) {
+        emptyFields.push('name')
+    }
+    if (!role) {
+        emptyFields.push('role')
+    }
+    if (!sheet_url) {
+        emptyFields.push('sheet_url')
+    }
+
+    if (emptyFields.length) {
+        return res.status(400).json({ error: 'Please fill in all the fields', emptyFields })
+    }
+
     try {
         const appUserData = await appUserDatas.create({ email, name, role, sheet_url })
         res.status(200).json(appUserData)
