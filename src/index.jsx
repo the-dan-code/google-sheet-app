@@ -11,12 +11,12 @@ import Signup from "./pages/Signup"
 import Login from "./pages/Login"
 import { AppUserDetailsContextProvider } from "./context/AppUserDetailsContext";
 
-import Test from "./pages/Test"
+import AppUserDataPage from "./pages/AppUserDataPage"
 
 const router = createBrowserRouter([
   {
-    path: "/Test",
-    element: <AppUserDetailsContextProvider><Test /></AppUserDetailsContextProvider>,
+    path: "/AppUserDataPage",
+    element: <AppUserDetailsContextProvider><AppUserDataPage /></AppUserDetailsContextProvider>,
   },
   {
     path: "/home",

@@ -1,4 +1,3 @@
-import "./Test.css"
 import Navbar from "../components/Navbar";
 import AppUserDetails from "../components/AppUserDetails"
 import AppUserDetailForm from "../components/AppUserDetailsForm"
@@ -6,7 +5,7 @@ import { useEffect} from "react";
 import { useAppUserDetailsContext } from "../hooks/useAppUserDetailsContext";
 
 
-const Test = () => {
+const AppUserDataPage = () => {
 
     const {appUserDetails, dispatch} = useAppUserDetailsContext()
 
@@ -42,4 +41,4 @@ const Test = () => {
     )
 }
 
-export default Test
+export default AppUserDataPage
