@@ -14,10 +14,14 @@ export const appUserDetailsReducer = (state, action) => {
             return {
                 appUserDetails: [action.payload, ...state.appUserDetails]
             }
-            case 'DELETE_APP_USER_DETAILS':
-                return {
-                    appUserDetails: state.appUserDetails.filter((e) => e._id !== action.payload._id)
-                }
+        case 'DELETE_APP_USER_DETAILS':
+            return {
+                appUserDetails: state.appUserDetails.filter((e) => e._id !== action.payload._id)
+            }
+        case 'UPDATE_APP_USER_DETAILS':
+            return {
+                appUserDetails: [action.payload, ...state.appUserDetails.filter((e) => e._id !== action.payload._id)]
+            }
         default:
             return state
     }

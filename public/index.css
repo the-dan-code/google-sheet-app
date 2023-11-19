@@ -57,7 +57,7 @@ header a {
 }
 
 .user-details span {
-    position: absolute;
+    position: flex;
     top: 20px;
     right: 20px;
     cursor: pointer;

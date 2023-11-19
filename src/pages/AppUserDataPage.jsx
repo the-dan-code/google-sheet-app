@@ -1,13 +1,21 @@
 import Navbar from "../components/Navbar";
 import AppUserDetails from "../components/AppUserDetails"
 import AppUserDetailForm from "../components/AppUserDetailsForm"
-import { useEffect} from "react";
+import { useState,useEffect} from "react";
 import { useAppUserDetailsContext } from "../hooks/useAppUserDetailsContext";
 
 
 const AppUserDataPage = () => {
 
-    const {appUserDetails, dispatch} = useAppUserDetailsContext()
+    const {appUserDetails, dispatch} = useAppUserDetailsContext();
+    
+
+    const [initialValues, setInitialValues] = useState({
+        name:'',
+        email:'',
+        role:'',
+        sheet_url:''
+    })
 
     useEffect(() => {
         const fetchAppUserData = async () => {
@@ -23,7 +31,11 @@ const AppUserDataPage = () => {
 
         console.log(appUserDetails)
         fetchAppUserData()
-    },)  
+    },[dispatch])  
+
+    const handleOnEdit = (formData) => {
+        setInitialValues(formData)
+    }
 
     return (
         <div className="test">
@@ -31,10 +43,10 @@ const AppUserDataPage = () => {
             <div className="page-body">
                 <div className="app-user-data">
                     {appUserDetails && appUserDetails.map((user_data) => (
-                        <AppUserDetails key={user_data._id} user_data={user_data} />
+                        <AppUserDetails key={user_data._id} user_data={user_data} toEdit={handleOnEdit} />
                     ))}
                 </div>
-                <AppUserDetailForm />
+                <AppUserDetailForm initialValues={initialValues} />
             </div>
             
         </div>
